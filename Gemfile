@@ -33,4 +33,6 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
+  gem 'fabrication', '~> 2.11.3'
+  gem 'faker', '~> 1.4.2'
 end
