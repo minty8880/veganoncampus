@@ -11,7 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805114720) do
+ActiveRecord::Schema.define(version: 20140809050805) do
+
+  create_table "campus", force: true do |t|
+    t.string   "name"
+    t.integer  "institution_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "campus", ["institution_id"], name: "index_campus_on_institution_id"
+
+  create_table "foods", force: true do |t|
+    t.text     "description"
+    t.integer  "outlet_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "foods", ["outlet_id"], name: "index_foods_on_outlet_id"
+  add_index "foods", ["user_id"], name: "index_foods_on_user_id"
+
+  create_table "institutions", force: true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "outlets", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "website"
+    t.string   "location"
+    t.integer  "campus_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "outlets", ["campus_id"], name: "index_outlets_on_campus_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
