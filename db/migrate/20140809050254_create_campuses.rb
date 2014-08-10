@@ -1,6 +1,6 @@
-class CreateCampus < ActiveRecord::Migration
+class CreateCampuses < ActiveRecord::Migration
   def change
-    create_table :campus do |t|
+    create_table :campuses do |t|
       t.string :name
       t.references :institution, index: true
 

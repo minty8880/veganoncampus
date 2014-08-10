@@ -1,0 +1,9 @@
+%h1= "#{@campus.institution} #{@campus}"
+
+%h2 Outlets
+%ul
+  - @campus.outlets.each do |outlet|
+    %li
+      = render partial: 'outlets/detail', locals: { outlet: outlet }
+      = render partial: 'foods/list', locals: { foods: outlet.foods }
+
