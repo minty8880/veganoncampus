@@ -37,3 +37,6 @@ group :development, :test do
   gem 'fabrication', '~> 2.11.3'
   gem 'faker', '~> 1.4.2'
 end
+group :production do
+  gem 'pg'
+end
