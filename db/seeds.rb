@@ -12,4 +12,4 @@ puts 'CREATED ADMIN USER: ' << user.email
 6.times   { Fabricate(:institution) }
 10.times  { Fabricate(:campus) }
 20.times  { Fabricate(:outlet) }
-8.times   { Fabricate(:food) }
+100.times { Fabricate(:food) }
