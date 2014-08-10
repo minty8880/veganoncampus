@@ -6,6 +6,6 @@ class Campus < ActiveRecord::Base
   default_scope { includes(:institution).order('institutions.name ASC') }
 
   def to_s
-    name
+    "#{institution} #{name}"
   end
 end
