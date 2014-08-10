@@ -9,7 +9,9 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
 
-6.times   { Fabricate(:institution) }
-10.times  { Fabricate(:campus) }
-20.times  { Fabricate(:outlet) }
-100.times { Fabricate(:food) }
+if Rails.env.development?
+  6.times   { Fabricate(:institution) }
+  10.times  { Fabricate(:campus) }
+  20.times  { Fabricate(:outlet) }
+  100.times { Fabricate(:food) }
+end
