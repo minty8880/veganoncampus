@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809050805) do
+ActiveRecord::Schema.define(version: 20140810081230) do
 
   create_table "campuses", force: true do |t|
     t.string   "name"
     t.integer  "institution_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "campuses", ["institution_id"], name: "index_campuses_on_institution_id"
+  add_index "campuses", ["slug"], name: "index_campuses_on_slug", unique: true
 
   create_table "foods", force: true do |t|
     t.text     "description"
