@@ -1,5 +1,5 @@
 -# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
+%nav.navbar.navbar-inverse.navbar-static-top
   .container
     .navbar-header
       %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
@@ -7,7 +7,11 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      = link_to 'VEGAN ON CAMPUS', root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'navigation_links'
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to 'Home', root_path
+        %li= link_to 'About', page_path(:about)
+        %li= link_to 'Campuses', campuses_path
+        %li= link_to 'Resources', page_path(:resources)
+        %li= link_to 'Contact', page_path(:contact)
