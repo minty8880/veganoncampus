@@ -1,48 +1,26 @@
-Veganoncampus
+Vegan on campus
 ================
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+The [Vegan on campus](http://veganoncampus.org) web application is being developed to help centralise information and collaborate on vegan food options available on university campuses. 
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+Issues
+-------------
+Log a [github issue](https://github.com/minty8880/veganoncampus/issues/new) to report bugs or submit feature requests.
 
-Problems? Issues?
------------
+Contributing
+------------
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+This project is open source. Please contact tanya@veganoncampus.org for further information or if you would like to contribute. Alternatively submit a pull request directly with your contribution and any relevant details.
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
+Technical
 -------------
 
-This application requires:
-
+Built using:
 - Ruby 2.1.2
 - Rails 4.1.4
 
 Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
 
-Getting Started
----------------
+This application was initially generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem provided by the [RailsApps Project](http://railsapps.github.io/).
 
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
