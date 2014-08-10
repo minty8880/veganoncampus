@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809050805) do
+ActiveRecord::Schema.define(version: 20140810081230) do
 
   create_table "campuses", force: true do |t|
     t.string   "name"
     t.integer  "institution_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "campuses", ["institution_id"], name: "index_campuses_on_institution_id"
+  add_index "campuses", ["slug"], name: "index_campuses_on_slug", unique: true
 
   create_table "foods", force: true do |t|
     t.text     "description"
@@ -32,6 +34,19 @@ ActiveRecord::Schema.define(version: 20140809050805) do
 
   add_index "foods", ["outlet_id"], name: "index_foods_on_outlet_id"
   add_index "foods", ["user_id"], name: "index_foods_on_user_id"
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "institutions", force: true do |t|
     t.string   "name"

@@ -1,4 +1,4 @@
 %h1 Institutions &amp; Campuses
 %ul
   - @campuses.each do |campus|
-    %li= link_to "#{campus.institution} #{campus}", campus
+    %li= link_to campus, campus

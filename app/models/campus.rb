@@ -1,4 +1,7 @@
 class Campus < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :to_s, use: :slugged
+
   self.table_name = 'campuses'
   belongs_to :institution
   has_many   :outlets
@@ -6,6 +9,6 @@ class Campus < ActiveRecord::Base
   default_scope { includes(:institution).order('institutions.name ASC') }
 
   def to_s
-    name
+    "#{institution} #{name}"
   end
 end
