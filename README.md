@@ -10,7 +10,7 @@ Log a [github issue](https://github.com/minty8880/veganoncampus/issues/new) to r
 Contributing
 ------------
 
-This project is open source. Please contact tanya@veganoncampus.org for further information or if you would like to contribute. Alternatively submit a pull request directly with your contribution and any relevant details.
+This project is open source. Please contact veganoncampus@gmail.com for further information or if you would like to contribute. Alternatively submit a pull request directly with your contribution and any relevant details.
 
 Technical
 -------------
