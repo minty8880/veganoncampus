@@ -2,4 +2,6 @@
 %h1 Institutions &amp; Campuses
 %ul
   - @campuses.each do |campus|
-    %li= link_to campus, campus
+    %li
+      = link_to campus, campus
+      = "(Outlets: #{campus.outlet_count}, Food listings: #{campus.food_count})"
