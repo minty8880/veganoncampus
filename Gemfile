@@ -16,6 +16,7 @@ gem 'high_voltage'
 gem 'pundit'
 gem 'simple_form'
 gem 'friendly_id', '~> 5.0.4'
+gem 'redcarpet', '~> 3.1.2'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
