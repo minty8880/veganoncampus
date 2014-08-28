@@ -17,4 +17,5 @@ if Rails.env.development?
 end
 
 require Rails.root.join('db', 'seeds', 'unsw.rb')
+require Rails.root.join('db', 'seeds', 'uts.rb')
 require Rails.root.join('db', 'seeds', 'all.rb')
