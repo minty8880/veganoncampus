@@ -13,5 +13,6 @@
     %main{:role => "main"}
       = render 'messages'
       = yield
+      = render 'twitter_feed'
     = render 'footer'
   = render 'google_analytics' if Rails.env.production?
