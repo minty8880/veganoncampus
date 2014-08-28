@@ -175,3 +175,12 @@ bar_navitas.foods.create(
   description: 'Vegetarian pizza, no cheese $13, gf base +$4.')
 bar_navitas.foods.create(
   description: 'Soup of the day w/ quinoa and soya bread, if you are lucky it is vegan $9.')
+
+bun_me  = kensington.outlets.create(
+  name: 'Bun Me', 
+  description: '', 
+  location: '[LOWER CAMPUS]', 
+  website: '')
+
+bun_me.foods.create(
+  description: 'Tofu and avocado vermicelli salad NO FISH SAUCE - really good, approx $8.')
