@@ -1,5 +1,5 @@
 uts             = Institution.create(name: 'University of Technology Sydney (UTS)')
-city            = city.campuses.create(name: 'City')
+city            = uts.campuses.create(name: 'City')
 
 another_hideaway    = city.outlets.create(
   name: 'Another Hideaway Cafe', 
