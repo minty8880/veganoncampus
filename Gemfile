@@ -24,11 +24,17 @@ group :development do
 end
 group :development, :test do
   gem 'byebug'
+  gem 'fabrication', '~> 2.11.3'
+  gem 'faker', '~> 1.4.2'
+  gem "factory_girl_rails"
   gem 'sqlite3'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'fabrication', '~> 2.11.3'
-  gem 'faker', '~> 1.4.2'
+  gem "rspec-rails", "3.2.1"
+  gem "capybara-webkit", ">= 1.2.0"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "shoulda-matchers", require: false
 end
 group :production do
   gem 'pg'
