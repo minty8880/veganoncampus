@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140810081230) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "campuses", force: true do |t|
     t.string   "name"
     t.integer  "institution_id"
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 20140810081230) do
     t.string   "slug"
   end
 
-  add_index "campuses", ["institution_id"], name: "index_campuses_on_institution_id"
-  add_index "campuses", ["slug"], name: "index_campuses_on_slug", unique: true
+  add_index "campuses", ["institution_id"], name: "index_campuses_on_institution_id", using: :btree
+  add_index "campuses", ["slug"], name: "index_campuses_on_slug", unique: true, using: :btree
 
   create_table "foods", force: true do |t|
     t.text     "description"
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 20140810081230) do
     t.datetime "updated_at"
   end
 
-  add_index "foods", ["outlet_id"], name: "index_foods_on_outlet_id"
-  add_index "foods", ["user_id"], name: "index_foods_on_user_id"
+  add_index "foods", ["outlet_id"], name: "index_foods_on_outlet_id", using: :btree
+  add_index "foods", ["user_id"], name: "index_foods_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -43,10 +46,10 @@ ActiveRecord::Schema.define(version: 20140810081230) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "institutions", force: true do |t|
     t.string   "name"
@@ -65,30 +68,6 @@ ActiveRecord::Schema.define(version: 20140810081230) do
     t.datetime "updated_at"
   end
 
-  add_index "outlets", ["campus_id"], name: "index_outlets_on_campus_id"
-
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.integer  "role"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "outlets", ["campus_id"], name: "index_outlets_on_campus_id", using: :btree
 
 end
