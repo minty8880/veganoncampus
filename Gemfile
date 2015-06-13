@@ -13,17 +13,23 @@ gem 'pundit'
 gem 'simple_form'
 gem 'friendly_id', '~> 5.0.4'
 gem 'redcarpet', '~> 3.1.2'
+gem "responders"
+gem "warden"
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'binding_of_caller', :platforms => [:mri_21]
   gem 'foreman'
-  gem 'hub', :require=>nil
+  gem 'hub', :require => nil
   gem 'quiet_assets'
   gem 'rails_layout'
 end
+
 group :development, :test do
   gem 'byebug'
+  gem "capybara-webkit", ">= 1.2.0"
+  gem "database_cleaner"
+  #gem "dotenv-rails"
   gem 'fabrication', '~> 2.11.3'
   gem 'faker', '~> 1.4.2'
   gem "factory_girl_rails"
@@ -31,11 +37,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem "rspec-rails", "3.2.1"
-  gem "capybara-webkit", ">= 1.2.0"
-  gem "database_cleaner"
   gem "launchy"
   gem "shoulda-matchers", require: false
 end
+
 group :production do
   gem 'pg'
 end
