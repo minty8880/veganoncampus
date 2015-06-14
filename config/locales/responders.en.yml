@@ -14,3 +14,9 @@ en:
       create:
         notice: 'You have signed up!'
         alert: 'Error with sign up.'
+    authenticated:
+      signed_in: 'You are now signed in.'
+      signed_out: 'You are now signed out.'
+  sessions:
+    flashes:
+      failed: 'Unable to sign in.'

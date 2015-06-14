@@ -17,14 +17,14 @@ class AuthenticatedController < ApplicationController
   end
 
   def deny_access(options = {})
-    path = options.fetch(:path, login_path)
+    path = options.fetch(:path, sign_in_path)
     message = options.fetch(:message, t("flash.authenticated.denied"))
     redirect_to path, alert: message
   end
 
   def sign_in(user, options = {})
     path = options.fetch(:path, root_path)
-    message = options.fetch(:message, t("flash.authenticated.logged_in"))
+    message = options.fetch(:message, t("flash.authenticated.signed_in"))
     warden.set_user(user)
     redirect_to path, notice: message
   end
