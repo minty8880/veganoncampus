@@ -29,9 +29,8 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem "capybara-webkit", ">= 1.2.0"
+  gem "capybara-webkit"
   gem "database_cleaner"
-  #gem "dotenv-rails"
   gem 'fabrication', '~> 2.11.3'
   gem 'faker', '~> 1.4.2'
   gem "factory_girl_rails"
