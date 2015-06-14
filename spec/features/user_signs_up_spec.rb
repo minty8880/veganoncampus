@@ -1,13 +1,13 @@
 require "rails_helper"
 
-feature "user can sign up"  do
-  scenario "user can sign up" do
+feature "registration process"  do
+  scenario "user can register" do
     visit root_path
-    click_on "Sign up"
+    click_on "Register"
 
     within "main" do
       fill_form
-      click_on "Sign up"
+      click_on "Register"
     end
 
     user = User.last
@@ -16,14 +16,14 @@ feature "user can sign up"  do
     expect(user.email).to eq "sam@example.com"
     expect(current_path).to eq root_path
     expect(page).to have_content(user.first_name)
-    expect(page).not_to have_content "Sign up"
+    expect(page).not_to have_content "Register"
   end
 
   scenario "can see errors" do
     visit sign_up_path
 
     within "main" do
-      click_on "Sign up"
+      click_on "Register"
     end
 
     expect(page).to have_content I18n.t("flash.users.create.alert")
@@ -36,7 +36,7 @@ feature "user can sign up"  do
     within "main" do
       fill_form
       select institution.name, from: "user[institution_id]"
-      click_on "Sign up"
+      click_on "Register"
     end
 
     expect(User.last.institution).to eq institution 
