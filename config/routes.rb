@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
-  devise_for :users
-  resources :users
+  get 'sign_up', to: 'users#new'
+  resources :users, only: [:new, :create]
   resources :campuses, only: [:index, :show]
+  root to: 'high_voltage/pages#show', id: 'home'
 end

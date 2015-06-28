@@ -1,38 +1,24 @@
-class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  after_action :verify_authorized
+class UsersController < AuthenticatedController
+  skip_before_action :require_login
 
-  def index
-    @users = User.all
-    authorize User
+  def new
+    @user = User.new
   end
 
-  def show
-    @user = User.find(params[:id])
-    authorize @user
-  end
+  def create
+    @user = User.new(user_params)
 
-  def update
-    @user = User.find(params[:id])
-    authorize @user
-    if @user.update_attributes(secure_params)
-      redirect_to users_path, :notice => "User updated."
+    if @user.save
+      sign_in @user, message: t("flash.users.create.notice")
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      respond_with @user, location: root_path  
     end
-  end
-
-  def destroy
-    user = User.find(params[:id])
-    authorize user
-    user.destroy
-    redirect_to users_path, :notice => "User deleted."
   end
 
   private
 
-  def secure_params
-    params.require(:user).permit(:role)
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :institution_id)
   end
 
 end
