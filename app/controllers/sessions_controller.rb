@@ -13,11 +13,11 @@ class SessionsController < AuthenticatedController
 
   def create
     warden.authenticate!
-    redirect_to root_path, notice: t("flash.authenticated.logged_in")
+    redirect_to root_path, notice: t("flash.authenticated.signed_in")
   end
 
   def destroy
     warden.logout
-    redirect_to login_path, notice: t("flash.authenticated.logged_out")
+    redirect_to sign_in_path, notice: t("flash.authenticated.signed_out")
   end
 end

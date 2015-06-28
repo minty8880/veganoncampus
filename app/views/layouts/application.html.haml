@@ -9,11 +9,7 @@
     = csrf_meta_tags
   %body
     %header
-      - if current_user
-        = "Welcome #{current_user.first_name}"
-      - else
-        = link_to "Sign up", sign_up_path
-
+      = render 'user_session'
       = render 'navigation'
     %main{:role => "main"}
       = render 'messages'
