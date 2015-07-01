@@ -12,5 +12,11 @@ en:
         alert: '%{resource_name} could not be destroyed.'
     users:
       create:
-        notice: 'You have signed up!'
-        alert: 'Error with sign up.'
+        notice: 'You have registered!'
+        alert: 'Error with registration.'
+    authenticated:
+      signed_in: 'You are now logged in.'
+      signed_out: 'You are now logged out.'
+  sessions:
+    flashes:
+      failed: 'Unable to log in.'
