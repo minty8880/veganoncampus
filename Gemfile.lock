@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems/
+  remote: http://rubygems.org/
   specs:
     actionmailer (4.1.4)
       actionpack (= 4.1.4)
@@ -244,4 +244,4 @@ DEPENDENCIES
   warden
 
 BUNDLED WITH
-   1.10.3
+   1.10.5
